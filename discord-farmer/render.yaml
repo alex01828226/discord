@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: discord-farmer
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: TOKEN
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
